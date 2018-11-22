@@ -1,8 +1,9 @@
 <?php
-class dbConfig {    
 
-    private $connect;
-    
+class dbConfig {     
+
+    public $connect;
+
     function __construct() {
         $this->connect = new mysqli("db", "root", "mypassword", "myDB");
         
@@ -10,7 +11,10 @@ class dbConfig {
             die ('Ошибка подключения ('  . $connect->connect_errno . ')'
                 . $connect->connect_error);
         }    
-    }
+    }    
+}
+
+class User extends dbConfig {
 
     public function getRecords() {
         $sql = "SELECT * FROM USER";
@@ -38,5 +42,7 @@ class dbConfig {
         $sql = "DELETE FROM USER WHERE id = " .$id;
         $result = mysqli_query($this->connect, $sql) or die ("Err: " . mysqli_error($this->connect));
     }
+
 }
+
 ?>

@@ -3,8 +3,8 @@
 
 include_once "connection.php";
 
-$dbConfig = new dbConfig;
-$result = $dbConfig->getRecords();
+$user = new User;
+$result = $user->getRecords();
 
 echo "<table width='50%' border='0' cellpadding='3' cellspacing='1' bgcolor='#000' style='margin-top: 10px'>";
 echo "<tr>";

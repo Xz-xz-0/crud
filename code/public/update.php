@@ -1,9 +1,9 @@
 <?php
     include_once "connection.php";
-    $dbConfig = new dbConfig;
+    $user = new User;
 
     if(isset($_GET['id'])) {
-        $result = $dbConfig->getSignleRec($_GET['id']);
+        $result = $user->getSignleRec($_GET['id']);
         $row = mysqli_fetch_array($result);
         extract($row);
     }
@@ -21,7 +21,7 @@
 
 <?php
     if(isset($_POST['submit'])) {
-        $dbConfig->update($id);
+        $user->update($id);
         echo "<script typle='text/javascript'>location.href='index.php'</script>";
     }
 ?>
