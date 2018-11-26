@@ -14,7 +14,7 @@ class dbConfig {
     }    
 }
 
-class User extends dbConfig {
+class Sql extends dbConfig {
 
     public function getRecords() {
         $sql = "SELECT * FROM USER";

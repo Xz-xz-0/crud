@@ -1,9 +1,9 @@
 <?php
     include_once "connection.php";
-    $user = new User;
+    $sql = new Sql;
 
     if(isset($_GET['id'])) {
-        $user->delete($_GET['id']);
+        $sql->delete($_GET['id']);
     }
 ?>
 

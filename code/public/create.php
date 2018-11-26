@@ -1,6 +1,6 @@
 <?php
 include_once "connection.php";
-$user = new User;
+$sql = new Sql;
 ?>
 
 <a href="index.php" style="border: 1px solid black; color: black; padding: 3px 10px; text-decoration: none; margin-bottom: 10px">Back</a>
@@ -16,7 +16,7 @@ $user = new User;
 
 <?php
     if (isset($_POST['submit'])) {
-        $user->create();
+        $sql->create();
         echo "<script typle='text/javascript'>location.href='index.php'</script>";
     }
 ?>
